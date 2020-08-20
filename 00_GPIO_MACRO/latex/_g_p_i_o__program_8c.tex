@@ -1,0 +1,162 @@
+\hypertarget{_g_p_i_o__program_8c}{}\doxysection{src/\+G\+P\+I\+O\+\_\+program.c File Reference}
+\label{_g_p_i_o__program_8c}\index{src/GPIO\_program.c@{src/GPIO\_program.c}}
+{\ttfamily \#include \char`\"{}S\+T\+D\+\_\+\+T\+Y\+P\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}B\+I\+T\+\_\+\+M\+A\+T\+H.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+\_\+private.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+\_\+config.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_g_p_i_o__program_8c_a6fdb85084e1a68c5835d18d3e882a41c}{G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Direction}} (u8 Copy\+\_\+u8\+Port, u8 Copy\+\_\+u8\+Pin, u8 u8\+Copy\+\_\+u8\+Mode)
+\begin{DoxyCompactList}\small\item\em \+: this function sets the direction of a P\+IN ( input/output ) and their modes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o__program_8c_a4467ac534462b91104497a4c10160a79}{G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Value}} (u8 Copy\+\_\+u8\+Port, u8 Copy\+\_\+u8\+Pin, u8 u8\+Copy\+\_\+u8\+Value)
+\begin{DoxyCompactList}\small\item\em \+: this function sets the value of a P\+IN ( 0/1 ) \end{DoxyCompactList}\item 
+u8 \mbox{\hyperlink{_g_p_i_o__program_8c_a450e2ed9794884eb3e46b6e5d917db9c}{G\+P\+I\+O\+\_\+u8\+Get\+Pin\+Value}} (u8 Copy\+\_\+u8\+Port, u8 Copy\+\_\+u8\+Pin)
+\begin{DoxyCompactList}\small\item\em \+: this function gets the value of the input pin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o__program_8c_ab4fcd35535e4d7569fc14d70e9bc38bf}{G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Direction}} (u8 Copy\+\_\+u8\+Port, u32 u32\+Copy\+\_\+u32\+Port\+Mode)
+\begin{DoxyCompactList}\small\item\em \+: this functios sets the direction of the entire port \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_p_i_o__program_8c_a21d8ef50b6dfd20da15dbb57164ded9d}{G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Value}} (u8 Copy\+\_\+u8\+Port, u32 u32\+Copy\+\_\+u8\+Value)
+\begin{DoxyCompactList}\small\item\em \+: this function sets an output port value (u32) \end{DoxyCompactList}\item 
+u32 \mbox{\hyperlink{_g_p_i_o__program_8c_a85a23f046237aafc31b38d7018dbcc58}{G\+P\+I\+O\+\_\+u32\+Get\+Port\+Value}} (u8 Copy\+\_\+u8\+Port)
+\begin{DoxyCompactList}\small\item\em \+: this function gets the value of an entire input port \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_g_p_i_o__program_8c_a85a23f046237aafc31b38d7018dbcc58}\label{_g_p_i_o__program_8c_a85a23f046237aafc31b38d7018dbcc58}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_u32GetPortValue@{GPIO\_u32GetPortValue}}
+\index{GPIO\_u32GetPortValue@{GPIO\_u32GetPortValue}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_u32GetPortValue()}{GPIO\_u32GetPortValue()}}
+{\footnotesize\ttfamily u32 G\+P\+I\+O\+\_\+u32\+Get\+Port\+Value (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port }\end{DoxyParamCaption})}
+
+
+
+\+: this function gets the value of an entire input port 
+
+@fun \+: G\+P\+I\+O\+\_\+u32\+Get\+Port\+Value 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: entire input port value (u32) 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file G\+P\+I\+O\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_g_p_i_o__program_8c_a450e2ed9794884eb3e46b6e5d917db9c}\label{_g_p_i_o__program_8c_a450e2ed9794884eb3e46b6e5d917db9c}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_u8GetPinValue@{GPIO\_u8GetPinValue}}
+\index{GPIO\_u8GetPinValue@{GPIO\_u8GetPinValue}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_u8GetPinValue()}{GPIO\_u8GetPinValue()}}
+{\footnotesize\ttfamily u8 G\+P\+I\+O\+\_\+u8\+Get\+Pin\+Value (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port,  }\item[{u8}]{Copy\+\_\+u8\+Pin }\end{DoxyParamCaption})}
+
+
+
+\+: this function gets the value of the input pin 
+
+@fun \+: G\+P\+I\+O\+\_\+u8\+Get\+Pin\+Value 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+{\em } & Copy\+\_\+u8\+Pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: pin value 0 or 1 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file G\+P\+I\+O\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_g_p_i_o__program_8c_a6fdb85084e1a68c5835d18d3e882a41c}\label{_g_p_i_o__program_8c_a6fdb85084e1a68c5835d18d3e882a41c}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_VidSetPinDirection@{GPIO\_VidSetPinDirection}}
+\index{GPIO\_VidSetPinDirection@{GPIO\_VidSetPinDirection}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_VidSetPinDirection()}{GPIO\_VidSetPinDirection()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Direction (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port,  }\item[{u8}]{Copy\+\_\+u8\+Pin,  }\item[{u8}]{u8\+Copy\+\_\+u8\+Mode }\end{DoxyParamCaption})}
+
+
+
+\+: this function sets the direction of a P\+IN ( input/output ) and their modes 
+
+@fun \+: G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Direction 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+{\em } & Copy\+\_\+u8\+Pin \\
+\hline
+{\em } & u8\+Copy\+\_\+u8\+Mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file G\+P\+I\+O\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_g_p_i_o__program_8c_a4467ac534462b91104497a4c10160a79}\label{_g_p_i_o__program_8c_a4467ac534462b91104497a4c10160a79}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_VidSetPinValue@{GPIO\_VidSetPinValue}}
+\index{GPIO\_VidSetPinValue@{GPIO\_VidSetPinValue}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_VidSetPinValue()}{GPIO\_VidSetPinValue()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Value (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port,  }\item[{u8}]{Copy\+\_\+u8\+Pin,  }\item[{u8}]{u8\+Copy\+\_\+u8\+Value }\end{DoxyParamCaption})}
+
+
+
+\+: this function sets the value of a P\+IN ( 0/1 ) 
+
+@fun \+: G\+P\+I\+O\+\_\+\+Vid\+Set\+Pin\+Value 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+{\em } & Copy\+\_\+u8\+Pin \\
+\hline
+{\em } & u8\+Copy\+\_\+u8\+Value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file G\+P\+I\+O\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_g_p_i_o__program_8c_ab4fcd35535e4d7569fc14d70e9bc38bf}\label{_g_p_i_o__program_8c_ab4fcd35535e4d7569fc14d70e9bc38bf}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_VidSetPortDirection@{GPIO\_VidSetPortDirection}}
+\index{GPIO\_VidSetPortDirection@{GPIO\_VidSetPortDirection}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_VidSetPortDirection()}{GPIO\_VidSetPortDirection()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Direction (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port,  }\item[{u32}]{u32\+Copy\+\_\+u32\+Port\+Mode }\end{DoxyParamCaption})}
+
+
+
+\+: this functios sets the direction of the entire port 
+
+@fun \+: G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Direction 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+{\em } & u8\+Copy\+\_\+u8\+Mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: use this function if aand if only all pins of this port have the same mode 
+\end{DoxyNote}
+
+
+Definition at line 169 of file G\+P\+I\+O\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_g_p_i_o__program_8c_a21d8ef50b6dfd20da15dbb57164ded9d}\label{_g_p_i_o__program_8c_a21d8ef50b6dfd20da15dbb57164ded9d}} 
+\index{GPIO\_program.c@{GPIO\_program.c}!GPIO\_VidSetPortValue@{GPIO\_VidSetPortValue}}
+\index{GPIO\_VidSetPortValue@{GPIO\_VidSetPortValue}!GPIO\_program.c@{GPIO\_program.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_VidSetPortValue()}{GPIO\_VidSetPortValue()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Value (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Port,  }\item[{u32}]{u32\+Copy\+\_\+u8\+Value }\end{DoxyParamCaption})}
+
+
+
+\+: this function sets an output port value (u32) 
+
+@fun \+: G\+P\+I\+O\+\_\+\+Vid\+Set\+Port\+Value 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Port \\
+\hline
+{\em } & u8\+Copy\+\_\+u8\+Value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file G\+P\+I\+O\+\_\+program.\+c.
+

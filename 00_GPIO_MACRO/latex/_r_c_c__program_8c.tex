@@ -1,0 +1,95 @@
+\hypertarget{_r_c_c__program_8c}{}\doxysection{src/\+R\+C\+C\+\_\+program.c File Reference}
+\label{_r_c_c__program_8c}\index{src/RCC\_program.c@{src/RCC\_program.c}}
+{\ttfamily \#include \char`\"{}S\+T\+D\+\_\+\+T\+Y\+P\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}B\+I\+T\+\_\+\+M\+A\+T\+H.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+C\+C\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+C\+C\+\_\+private.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+C\+C\+\_\+config.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_c_c__program_8c_ad60f70f3de4859fb120efe0963db9fef}{R\+C\+C\+\_\+void\+\_\+\+Enable\+Clock}} (u8 Copy\+\_\+u8\+Bus\+ID, u8 Copy\+\_\+u8\+Periph\+ID)
+\begin{DoxyCompactList}\small\item\em \+: This function enables clock for a specific peripheral \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_c_c__program_8c_a2433444f8572c4e56197780bc115f691}{R\+C\+C\+\_\+void\+\_\+\+Disable\+Clock}} (u8 Copy\+\_\+u8\+Bus\+ID, u8 Copy\+\_\+u8\+Periph\+ID)
+\begin{DoxyCompactList}\small\item\em \+: This function disables clock for a specific peripheral \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_c_c__program_8c_a1dd079975cb6659f1492078f3485f7f9}{R\+C\+C\+\_\+void\+Init\+Sys\+Clock}} (void)
+\begin{DoxyCompactList}\small\item\em \+: this function initialized the system clock based on the configuration file \char`\"{}\+R\+C\+C\+\_\+config.\+h\char`\"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_c_c__program_8c_a2433444f8572c4e56197780bc115f691}\label{_r_c_c__program_8c_a2433444f8572c4e56197780bc115f691}} 
+\index{RCC\_program.c@{RCC\_program.c}!RCC\_void\_DisableClock@{RCC\_void\_DisableClock}}
+\index{RCC\_void\_DisableClock@{RCC\_void\_DisableClock}!RCC\_program.c@{RCC\_program.c}}
+\doxysubsubsection{\texorpdfstring{RCC\_void\_DisableClock()}{RCC\_void\_DisableClock()}}
+{\footnotesize\ttfamily void R\+C\+C\+\_\+void\+\_\+\+Disable\+Clock (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Bus\+ID,  }\item[{u8}]{Copy\+\_\+u8\+Periph\+ID }\end{DoxyParamCaption})}
+
+
+
+\+: This function disables clock for a specific peripheral 
+
+@fun \+: R\+C\+C\+\_\+void\+\_\+\+Disable\+Clock 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Bus\+ID \\
+\hline
+{\em } & Copy\+\_\+u8\+Periph\+ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\+: 
+\end{DoxyNote}
+
+
+Definition at line 51 of file R\+C\+C\+\_\+program.\+c.
+
+\mbox{\Hypertarget{_r_c_c__program_8c_ad60f70f3de4859fb120efe0963db9fef}\label{_r_c_c__program_8c_ad60f70f3de4859fb120efe0963db9fef}} 
+\index{RCC\_program.c@{RCC\_program.c}!RCC\_void\_EnableClock@{RCC\_void\_EnableClock}}
+\index{RCC\_void\_EnableClock@{RCC\_void\_EnableClock}!RCC\_program.c@{RCC\_program.c}}
+\doxysubsubsection{\texorpdfstring{RCC\_void\_EnableClock()}{RCC\_void\_EnableClock()}}
+{\footnotesize\ttfamily void R\+C\+C\+\_\+void\+\_\+\+Enable\+Clock (\begin{DoxyParamCaption}\item[{u8}]{Copy\+\_\+u8\+Bus\+ID,  }\item[{u8}]{Copy\+\_\+u8\+Periph\+ID }\end{DoxyParamCaption})}
+
+
+
+\+: This function enables clock for a specific peripheral 
+
+Created on\+: Aug 11, 2020 Author\+: Mohamed Ebead @fun \+: R\+C\+C\+\_\+void\+\_\+\+Enable\+Clock 
+\begin{DoxyParams}{Parameters}
+{\em } & Copy\+\_\+u8\+Bus\+ID \\
+\hline
+{\em } & Copy\+\_\+u8\+Periph\+ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+:none 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file R\+C\+C\+\_\+program.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{_r_c_c__program_8c_a1dd079975cb6659f1492078f3485f7f9}\label{_r_c_c__program_8c_a1dd079975cb6659f1492078f3485f7f9}} 
+\index{RCC\_program.c@{RCC\_program.c}!RCC\_voidInitSysClock@{RCC\_voidInitSysClock}}
+\index{RCC\_voidInitSysClock@{RCC\_voidInitSysClock}!RCC\_program.c@{RCC\_program.c}}
+\doxysubsubsection{\texorpdfstring{RCC\_voidInitSysClock()}{RCC\_voidInitSysClock()}}
+{\footnotesize\ttfamily void R\+C\+C\+\_\+void\+Init\+Sys\+Clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\+: this function initialized the system clock based on the configuration file \char`\"{}\+R\+C\+C\+\_\+config.\+h\char`\"{} 
+
+@fun \+: R\+C\+C\+\_\+void\+Init\+Sys\+Clock \begin{DoxyNote}{Note}
+\+: 
+\end{DoxyNote}
+
+
+Definition at line 75 of file R\+C\+C\+\_\+program.\+c.
+
+
+
+Referenced by main().
+
