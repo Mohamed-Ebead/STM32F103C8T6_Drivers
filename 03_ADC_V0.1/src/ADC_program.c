@@ -160,12 +160,7 @@ void ADC_vidInit (ADC_Handle_t *pADC_Handle )
 u32 ADC_u16ReadBlocking    ( ADC_Handle_t *pADC_Handle )
 {
 	u32 Local_u32Digital_Value  = 0 ;
-
-	// Start conversion
-	pADC_Handle->pADCx->CR2 &= ~(1<<CR2_ADON_BIT) ;
-
-	// Start conversion
-	pADC_Handle->pADCx->CR2 |= (1<<CR2_ADON_BIT) ;
+	
 	// Start conversion
 	pADC_Handle->pADCx->CR2 |= (1<<CR2_ADON_BIT) ;
 
