@@ -1213,16 +1213,18 @@ Discarded input sections
  .group         0x00000000        0xc ./src/SysTick_program.o
  .group         0x00000000        0xc ./src/SysTick_program.o
  .group         0x00000000        0xc ./src/SysTick_program.o
- .group         0x00000000        0xc ./src/SysTick_program.o
  .text          0x00000000        0x0 ./src/SysTick_program.o
  .data          0x00000000        0x0 ./src/SysTick_program.o
  .bss           0x00000000        0x0 ./src/SysTick_program.o
  .text.STK_u32GetCurrentValue
                 0x00000000        0xc ./src/SysTick_program.o
+ .text.STK_voidDelay_ms_Polling
+                0x00000000       0x28 ./src/SysTick_program.o
+ .text.STK_voidDelay_us_Polling
+                0x00000000       0x20 ./src/SysTick_program.o
  .debug_macro   0x00000000      0xa60 ./src/SysTick_program.o
  .debug_macro   0x00000000       0x1c ./src/SysTick_program.o
  .debug_macro   0x00000000       0x70 ./src/SysTick_program.o
- .debug_macro   0x00000000       0x2e ./src/SysTick_program.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
@@ -1719,7 +1721,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x290
+.debug_aranges  0x00000000      0x2a0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 ./system/src/newlib/_exit.o
@@ -1740,14 +1742,14 @@ END GROUP
  .debug_aranges
                 0x00000200       0x30 ./src/RCC_program.o
  .debug_aranges
-                0x00000230       0x30 ./src/SysTick_program.o
+                0x00000230       0x40 ./src/SysTick_program.o
  .debug_aranges
-                0x00000260       0x30 ./src/main.o
+                0x00000270       0x30 ./src/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x342b
+.debug_info     0x00000000     0x347e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x94a ./system/src/newlib/_exit.o
  .debug_info    0x0000094a      0x42e ./system/src/newlib/_startup.o
@@ -1758,10 +1760,10 @@ END GROUP
  .debug_info    0x000029c2       0xca ./system/src/cmsis/vectors_stm32f10x.o
  .debug_info    0x00002a8c      0x4db ./src/GPIO_program.o
  .debug_info    0x00002f67       0xec ./src/RCC_program.o
- .debug_info    0x00003053       0xff ./src/SysTick_program.o
- .debug_info    0x00003152      0x2d9 ./src/main.o
+ .debug_info    0x00003053      0x152 ./src/SysTick_program.o
+ .debug_info    0x000031a5      0x2d9 ./src/main.o
 
-.debug_abbrev   0x00000000      0xef2
+.debug_abbrev   0x00000000      0xf01
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f5 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f5      0x1b3 ./system/src/newlib/_startup.o
@@ -1772,10 +1774,10 @@ END GROUP
  .debug_abbrev  0x00000a77       0x9d ./system/src/cmsis/vectors_stm32f10x.o
  .debug_abbrev  0x00000b14      0x156 ./src/GPIO_program.o
  .debug_abbrev  0x00000c6a       0x88 ./src/RCC_program.o
- .debug_abbrev  0x00000cf2       0xc9 ./src/SysTick_program.o
- .debug_abbrev  0x00000dbb      0x137 ./src/main.o
+ .debug_abbrev  0x00000cf2       0xd8 ./src/SysTick_program.o
+ .debug_abbrev  0x00000dca      0x137 ./src/main.o
 
-.debug_line     0x00000000     0x2119
+.debug_line     0x00000000     0x2136
  *(.debug_line)
  .debug_line    0x00000000      0x3d2 ./system/src/newlib/_exit.o
  .debug_line    0x000003d2      0x441 ./system/src/newlib/_startup.o
@@ -1786,10 +1788,10 @@ END GROUP
  .debug_line    0x00001b85      0x121 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_line    0x00001ca6      0x19f ./src/GPIO_program.o
  .debug_line    0x00001e45       0xd4 ./src/RCC_program.o
- .debug_line    0x00001f19       0xec ./src/SysTick_program.o
- .debug_line    0x00002005      0x114 ./src/main.o
+ .debug_line    0x00001f19      0x109 ./src/SysTick_program.o
+ .debug_line    0x00002022      0x114 ./src/main.o
 
-.debug_frame    0x00000000      0x464
+.debug_frame    0x00000000      0x484
  *(.debug_frame)
  .debug_frame   0x00000000       0x38 ./system/src/newlib/_exit.o
  .debug_frame   0x00000038       0x7c ./system/src/newlib/_startup.o
@@ -1800,10 +1802,10 @@ END GROUP
  .debug_frame   0x00000298       0x20 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_frame   0x000002b8       0xdc ./src/GPIO_program.o
  .debug_frame   0x00000394       0x40 ./src/RCC_program.o
- .debug_frame   0x000003d4       0x40 ./src/SysTick_program.o
- .debug_frame   0x00000414       0x50 ./src/main.o
+ .debug_frame   0x000003d4       0x60 ./src/SysTick_program.o
+ .debug_frame   0x00000434       0x50 ./src/main.o
 
-.debug_str      0x00000000    0x563f6
+.debug_str      0x00000000    0x56453
  *(.debug_str)
  .debug_str     0x00000000     0x7ce8 ./system/src/newlib/_exit.o
                                0x7eac (size before relaxing)
@@ -1823,19 +1825,20 @@ END GROUP
                                0x3d36 (size before relaxing)
  .debug_str     0x00055ed5      0x2ee ./src/RCC_program.o
                                0x346c (size before relaxing)
- .debug_str     0x000561c3      0x20f ./src/SysTick_program.o
-                               0x3362 (size before relaxing)
- .debug_str     0x000563d2       0x24 ./src/main.o
-                               0x3cc0 (size before relaxing)
+ .debug_str     0x000561c3      0x26c ./src/SysTick_program.o
+                               0x3369 (size before relaxing)
+ .debug_str     0x0005642f       0x24 ./src/main.o
+                               0x3cc1 (size before relaxing)
 
-.debug_loc      0x00000000      0x7aa
+.debug_loc      0x00000000      0x7cb
  *(.debug_loc)
  .debug_loc     0x00000000      0x1a9 ./system/src/newlib/_startup.o
  .debug_loc     0x000001a9       0x63 ./system/src/newlib/_syscalls.o
  .debug_loc     0x0000020c       0xdf ./system/src/cmsis/system_stm32f10x.o
  .debug_loc     0x000002eb      0x341 ./src/GPIO_program.o
  .debug_loc     0x0000062c      0x14c ./src/RCC_program.o
- .debug_loc     0x00000778       0x32 ./src/main.o
+ .debug_loc     0x00000778       0x21 ./src/SysTick_program.o
+ .debug_loc     0x00000799       0x32 ./src/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1853,7 +1856,7 @@ END GROUP
  *(.debug_varnames)
 OUTPUT(07.SysTick.elf elf32-littlearm)
 
-.debug_ranges   0x00000000      0x240
+.debug_ranges   0x00000000      0x250
  .debug_ranges  0x00000000       0x18 ./system/src/newlib/_exit.o
  .debug_ranges  0x00000018       0x78 ./system/src/newlib/_startup.o
  .debug_ranges  0x00000090       0x20 ./system/src/newlib/_syscalls.o
@@ -1863,10 +1866,10 @@ OUTPUT(07.SysTick.elf elf32-littlearm)
  .debug_ranges  0x00000160       0x10 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_ranges  0x00000170       0x58 ./src/GPIO_program.o
  .debug_ranges  0x000001c8       0x20 ./src/RCC_program.o
- .debug_ranges  0x000001e8       0x20 ./src/SysTick_program.o
- .debug_ranges  0x00000208       0x38 ./src/main.o
+ .debug_ranges  0x000001e8       0x30 ./src/SysTick_program.o
+ .debug_ranges  0x00000218       0x38 ./src/main.o
 
-.debug_macro    0x00000000     0x1da8
+.debug_macro    0x00000000     0x1d9f
  .debug_macro   0x00000000      0x1b4 ./system/src/newlib/_exit.o
  .debug_macro   0x000001b4       0x9c ./system/src/newlib/_exit.o
  .debug_macro   0x00000250      0x10e ./system/src/newlib/_exit.o
@@ -1906,7 +1909,7 @@ OUTPUT(07.SysTick.elf elf32-littlearm)
  .debug_macro   0x00001bcb       0x3e ./src/RCC_program.o
  .debug_macro   0x00001c09       0x8e ./src/RCC_program.o
  .debug_macro   0x00001c97       0x10 ./src/RCC_program.o
- .debug_macro   0x00001ca7       0x48 ./src/SysTick_program.o
- .debug_macro   0x00001cef       0x1c ./src/SysTick_program.o
- .debug_macro   0x00001d0b       0x4c ./src/SysTick_program.o
- .debug_macro   0x00001d57       0x51 ./src/main.o
+ .debug_macro   0x00001ca7       0x3f ./src/SysTick_program.o
+ .debug_macro   0x00001ce6       0x1c ./src/SysTick_program.o
+ .debug_macro   0x00001d02       0x4c ./src/SysTick_program.o
+ .debug_macro   0x00001d4e       0x51 ./src/main.o

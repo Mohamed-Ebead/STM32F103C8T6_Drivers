@@ -14,4 +14,9 @@ void STK_voidLoadValue (u32 Copy_u8LoadValue) ;
 
 u32 STK_u32GetCurrentValue (void ) ;
 
+
+void STK_voidDelay_ms_Polling (u16 Copy_u16MilliSeconds) ;
+void STK_voidDelay_us_Polling (u16 Copy_u16MicroSeconds) ;
+
+
 #endif /* SYSTICK_INTERFACE_H_ */
