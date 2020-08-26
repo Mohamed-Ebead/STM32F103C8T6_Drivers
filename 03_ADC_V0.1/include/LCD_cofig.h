@@ -14,8 +14,8 @@
  * choose GPIO which is connected to your LCD pins control and data buffer pins
  * OPTIONS : GPIOA , GPIOB
  */
-#define LCD_DATA_PORT	 GPIOA
-#define LCD_CTRL_PORT 	 GPIOA
+#define LCD_DATA_PORT	 GPIOB
+#define LCD_CTRL_PORT 	 GPIOB
 
 /**
  * choose the start pin of your data bus
@@ -23,7 +23,7 @@
  * 			 GPIO_HIGHER_BYTE in case GPIOB
  * 	then , connect the rest data bus after it ordered
  */
-#define LCD_DATA_BYTE   GPIO_LOWER_BYTE
+#define LCD_DATA_BYTE   GPIO_HIGHER_BYTE
 
 /**
  * @CTRL_NIPPLE_NUMBER
@@ -43,10 +43,12 @@
  * OPTIONS : GPIO_PIN_NO_0 >> GPIO_PIN_NO_15
  */
 
-#define LCD_VDD_PIN 		 GPIO_PIN_NO_8
-#define LCD_RS_PIN 		     GPIO_PIN_NO_9
-#define LCD_RW_PIN 		     GPIO_PIN_NO_10
-#define LCD_EN_PIN  	     GPIO_PIN_NO_11
+#define LCD_RS_PIN 		     GPIO_PIN_NO_7
+#define LCD_EN_PIN  	     GPIO_PIN_NO_6
+//#define LCD_VDD_PIN 		 GPIO_PIN_NO_8       // always VCC 5v
+
+//#define LCD_RW_PIN 		     GPIO_PIN_NO_10   // always Grounded
+
 
 
 /**

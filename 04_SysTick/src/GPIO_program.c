@@ -86,6 +86,7 @@ void GPIO_vidInit(GPIO_Handle_t *pGPIOHandle)
     }
     else           // GPIO PINS 8 >> 15
     {
+		PinNumber -= 8 ;
     	pGPIOHandle->pGPIOx->CRH &= ~( (0b1111) << (4*PinNumber) ) ;
     	pGPIOHandle->pGPIOx->CRH |= ((PinMode)<<(4*(PinNumber))) ;
     }

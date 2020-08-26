@@ -63,42 +63,42 @@ void LCD_vidInitialize(void)
 	}
 
 
-	/*GPIO_Handle_t LCD_RS ;
+	GPIO_Handle_t LCD_RS ;
 	LCD_RS.pGPIOx = LCD_CTRL_PORT ;
 	LCD_RS.GPIO_PinConfig.GPIO_PinNumber = LCD_RS_PIN ;
 	LCD_RS.GPIO_PinConfig.GPIO_PinMode = OUTPUT_10MHZ_PP ;
 	GPIO_vidInit(&LCD_RS);
+
+
 
 	GPIO_Handle_t LCD_EN ;
 	LCD_EN.pGPIOx = LCD_CTRL_PORT ;
 	LCD_EN.GPIO_PinConfig.GPIO_PinNumber = LCD_EN_PIN ;
 	LCD_EN.GPIO_PinConfig.GPIO_PinMode = OUTPUT_10MHZ_PP ;
 	GPIO_vidInit(&LCD_EN);
-
-	GPIO_Handle_t LCD_RW ;
+	/*
+	 * GPIO_Handle_t LCD_RW ;
 	LCD_RW.pGPIOx = LCD_CTRL_PORT ;
 	LCD_RW.GPIO_PinConfig.GPIO_PinNumber = LCD_RW_PIN ;
-	LCD_RW.GPIO_PinConfig.GPIO_PinMode = OUTPUT_10MHZ_PP ;
-	GPIO_vidInit(&LCD_RW);*/
-
-
-
+	LCD_RW.GPIO_PinConfig.GPIO_PinMode = GPIO_BYTE_OUTPUT_10MHZ_PP ;
+	GPIO_vidInit(&LCD_RW);
+	*/
 
 
 	/* Initialize the control Pins of the LCD  */
-	GPIO_Handle_t LCD_ControlPins ;
+	/*GPIO_Handle_t LCD_ControlPins ;
 	LCD_ControlPins.pGPIOx=LCD_CTRL_PORT ;
 	LCD_ControlPins.GPIO_NippleConfig.GPIO_NibbleNumber = LCD_CTRL_NIPPLE ;
 	LCD_ControlPins.GPIO_NippleConfig.GPIO_NibbleMode   = GPIO_NIBBLE_OUTPUT_10MHZ_PP ;
 
-	GPIO_vidInitNibble(&LCD_ControlPins);
+	GPIO_vidInitNibble(&LCD_ControlPins);*/
 
 
    /*------------------------------------------------------------------------------------*/
 
 	// set VDD to 5 volt
-	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_VDD_PIN , GPIO_PIN_SET) ;
-	LCD_Delay() ;
+	//GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_VDD_PIN , GPIO_PIN_SET) ;
+	//LCD_Delay() ;
 
 	// FUNCTION SET
 	LCD_vidWriteCommand (0b00111000);   //0X38  // N=0 1 line 0b00110000
@@ -129,7 +129,7 @@ void LCD_vidWriteCommand (u8 Copy_u8Command)
 	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RS_PIN , GPIO_PIN_RESET) ;
 
 	// RESET R/W
-	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RW_PIN , GPIO_PIN_RESET) ;
+	//GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RW_PIN , GPIO_PIN_RESET) ;
 
 	// Set EN
 	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_EN_PIN , GPIO_PIN_SET) ;
@@ -137,7 +137,7 @@ void LCD_vidWriteCommand (u8 Copy_u8Command)
 	// read data when E is high  , write data on falling edge
 	GPIO_WriteToOutputByte(LCD_DATA_PORT , LCD_DATA_BYTE ,Copy_u8Command ) ;
 
-	// set EN to 1 after setting command
+	// set EN to 1 after settting command
 	// pulse
 	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_EN_PIN , GPIO_PIN_RESET) ;
 	LCD_Delay() ;
@@ -157,7 +157,7 @@ void LCD_vidWriteCharacter(u8 Copy_u8Data)
 	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RS_PIN , GPIO_PIN_SET) ;
 
 	// RESET R/W
-	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RW_PIN , GPIO_PIN_RESET) ;
+	//GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_RW_PIN , GPIO_PIN_RESET) ;
 
 	// Set EN
 	GPIO_WriteToOutputPin(LCD_CTRL_PORT , LCD_EN_PIN , GPIO_PIN_SET) ;
