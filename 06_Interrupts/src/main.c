@@ -10,6 +10,7 @@
 
 #include "Led_interface.h"
 
+
 #include "RCC_interface.h"
 #include "GPIO_interface.h"
 #include "GPIO_private.h"
@@ -19,16 +20,15 @@
 #include "Interrupting_Button_interface.h"
 
 
-void delay(void)
+void Debouncing_delay(void)
 {
-	for(int i = 0 ; i < 500 ; i++ )
-{
-	for(int j = 0 ; j < 600 ; j++ )
+	for(int i = 0 ; i < 600 ; i++ )
 	{
+	for(int j = 0 ; j < 600 ; j++ )
+		{
 		asm("NOP");
+		}
 	}
-}
-
 }
 
 
@@ -38,6 +38,7 @@ int main(void)
 {
 	RCC_voidInitSysClock() ;
 
+
 	RedLed_Init    () ;
 
 //	NVIC_voidEnableInterrupt(6) ;
@@ -45,14 +46,6 @@ int main(void)
 
 
 	PushButton_voidInit();
-
-
-	//RCC_void_EnableClock(RCC_APB2 , RCC_PORTA) ;
-
-
-
-
-	//delay() ;
 
 
 	while(1)
@@ -67,9 +60,15 @@ int main(void)
 
 void EXTI0_IRQHandler (void)
 {
-	delay();
-	//STK_voidDelay_ms_Polling(50) ;
- 	PushButton_Handler () ;
+	if ( !(GPIO_ReadFromInputPin(GPIOB,GPIO_PIN_NO_0)) )
+	{
+		Debouncing_delay();    // bouncing time
+		PushButton_Handler () ;
+	}
+	else
+	{
+
+	}
 
 }
 

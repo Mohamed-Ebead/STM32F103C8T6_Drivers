@@ -1211,8 +1211,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/GPIO_program.o
  .data          0x00000000        0x0 ./src/GPIO_program.o
  .bss           0x00000000        0x0 ./src/GPIO_program.o
- .text.GPIO_ReadFromInputPin
-                0x00000000        0xa ./src/GPIO_program.o
  .text.GPIO_ReadFromInputPort
                 0x00000000        0x6 ./src/GPIO_program.o
  .text.GPIO_WriteToOutputPort
@@ -1550,10 +1548,10 @@ END GROUP
 
 .inits          0x08000294       0x28
                 0x08000294                __data_regions_array_start = .
-                0x08000294        0x4 LONG 0x80008c4 LOADADDR (.data)
+                0x08000294        0x4 LONG 0x80008dc LOADADDR (.data)
                 0x08000298        0x4 LONG 0x20000000 ADDR (.data)
                 0x0800029c        0x4 LONG 0x20000024 (ADDR (.data) + SIZEOF (.data))
-                0x080002a0        0x4 LONG 0x80008c4 LOADADDR (.data_CCMRAM)
+                0x080002a0        0x4 LONG 0x80008dc LOADADDR (.data_CCMRAM)
                 0x080002a4        0x4 LONG 0x0 ADDR (.data_CCMRAM)
                 0x080002a8        0x4 LONG 0x0 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x080002ac                __data_regions_array_end = .
@@ -1585,7 +1583,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x080002bc      0x608
+.text           0x080002bc      0x620
  *(.text .text.*)
  .text._exit    0x080002bc        0x2 ./system/src/newlib/_exit.o
                 0x080002bc                _exit
@@ -1621,89 +1619,92 @@ END GROUP
  .text.GPIO_vidInit
                 0x080005ec       0x54 ./src/GPIO_program.o
                 0x080005ec                GPIO_vidInit
+ .text.GPIO_ReadFromInputPin
+                0x08000640        0xa ./src/GPIO_program.o
+                0x08000640                GPIO_ReadFromInputPin
  .text.GPIO_WriteToOutputPin
-                0x08000640       0x18 ./src/GPIO_program.o
-                0x08000640                GPIO_WriteToOutputPin
+                0x0800064a       0x18 ./src/GPIO_program.o
+                0x0800064a                GPIO_WriteToOutputPin
  .text.GPIO_ToggleOutputPin
-                0x08000658        0xe ./src/GPIO_program.o
-                0x08000658                GPIO_ToggleOutputPin
- *fill*         0x08000666        0x2 
+                0x08000662        0xe ./src/GPIO_program.o
+                0x08000662                GPIO_ToggleOutputPin
  .text.GPIO_voidInitExternalInterrupt
-                0x08000668       0x5c ./src/Interrupting_Button_program.o
-                0x08000668                GPIO_voidInitExternalInterrupt
+                0x08000670       0x5c ./src/Interrupting_Button_program.o
+                0x08000670                GPIO_voidInitExternalInterrupt
  .text.PushButton_voidInit
-                0x080006c4       0x50 ./src/Interrupting_Button_program.o
-                0x080006c4                PushButton_voidInit
+                0x080006cc       0x50 ./src/Interrupting_Button_program.o
+                0x080006cc                PushButton_voidInit
  .text.PushButton_Handler
-                0x08000714       0x18 ./src/Interrupting_Button_program.o
-                0x08000714                PushButton_Handler
+                0x0800071c       0x18 ./src/Interrupting_Button_program.o
+                0x0800071c                PushButton_Handler
  .text.RedLed_Init
-                0x0800072c       0x24 ./src/Led_program.o
-                0x0800072c                RedLed_Init
+                0x08000734       0x24 ./src/Led_program.o
+                0x08000734                RedLed_Init
  .text.NVIC_voidEnableInterrupt
-                0x08000750       0x2c ./src/NVIC_program.o
-                0x08000750                NVIC_voidEnableInterrupt
+                0x08000758       0x2c ./src/NVIC_program.o
+                0x08000758                NVIC_voidEnableInterrupt
  .text.NVIC_voidClearPendingFlag
-                0x0800077c       0x2c ./src/NVIC_program.o
-                0x0800077c                NVIC_voidClearPendingFlag
+                0x08000784       0x2c ./src/NVIC_program.o
+                0x08000784                NVIC_voidClearPendingFlag
  .text.NVIC_voidSetPriority
-                0x080007a8       0x30 ./src/NVIC_program.o
-                0x080007a8                NVIC_voidSetPriority
+                0x080007b0       0x30 ./src/NVIC_program.o
+                0x080007b0                NVIC_voidSetPriority
  .text.RCC_void_EnableClock
-                0x080007d8       0x4c ./src/RCC_program.o
-                0x080007d8                RCC_void_EnableClock
+                0x080007e0       0x4c ./src/RCC_program.o
+                0x080007e0                RCC_void_EnableClock
  .text.RCC_void_DisableClock
-                0x08000824       0x54 ./src/RCC_program.o
-                0x08000824                RCC_void_DisableClock
+                0x0800082c       0x54 ./src/RCC_program.o
+                0x0800082c                RCC_void_DisableClock
  .text.RCC_voidInitSysClock
-                0x08000878       0x14 ./src/RCC_program.o
-                0x08000878                RCC_voidInitSysClock
- .text.delay    0x0800088c       0x1c ./src/main.o
-                0x0800088c                delay
- .text.main     0x080008a8       0x10 ./src/main.o
-                0x080008a8                main
+                0x08000880       0x14 ./src/RCC_program.o
+                0x08000880                RCC_voidInitSysClock
+ .text.Debouncing_delay
+                0x08000894       0x1c ./src/main.o
+                0x08000894                Debouncing_delay
+ .text.main     0x080008b0       0x10 ./src/main.o
+                0x080008b0                main
  .text.EXTI0_IRQHandler
-                0x080008b8        0xc ./src/main.o
-                0x080008b8                EXTI0_IRQHandler
+                0x080008c0       0x1c ./src/main.o
+                0x080008c0                EXTI0_IRQHandler
  *(.rodata .rodata.* .constdata .constdata.*)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x080008c4        0x0 linker stubs
+ .glue_7        0x080008dc        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080008c4        0x0 linker stubs
+ .glue_7t       0x080008dc        0x0 linker stubs
 
-.vfp11_veneer   0x080008c4        0x0
- .vfp11_veneer  0x080008c4        0x0 linker stubs
+.vfp11_veneer   0x080008dc        0x0
+ .vfp11_veneer  0x080008dc        0x0 linker stubs
 
-.v4_bx          0x080008c4        0x0
- .v4_bx         0x080008c4        0x0 linker stubs
+.v4_bx          0x080008dc        0x0
+ .v4_bx         0x080008dc        0x0 linker stubs
 
-.iplt           0x080008c4        0x0
- .iplt          0x080008c4        0x0 ./system/src/newlib/_exit.o
+.iplt           0x080008dc        0x0
+ .iplt          0x080008dc        0x0 ./system/src/newlib/_exit.o
 
-.rel.dyn        0x080008c4        0x0
- .rel.iplt      0x080008c4        0x0 ./system/src/newlib/_exit.o
+.rel.dyn        0x080008dc        0x0
+ .rel.iplt      0x080008dc        0x0 ./system/src/newlib/_exit.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080008c4                . = ALIGN (0x4)
-                0x080008c4                __exidx_start = .
+                0x080008dc                . = ALIGN (0x4)
+                0x080008dc                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x080008c4                __exidx_end = .
-                0x080008c4                . = ALIGN (0x4)
-                0x080008c4                _etext = .
-                0x080008c4                __etext = .
+                0x080008dc                __exidx_end = .
+                0x080008dc                . = ALIGN (0x4)
+                0x080008dc                _etext = .
+                0x080008dc                __etext = .
 
-.data_CCMRAM    0x00000000        0x0 load address 0x080008c4
+.data_CCMRAM    0x00000000        0x0 load address 0x080008dc
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x00000000                . = ALIGN (0x4)
-                0x080008c4                _sidata = LOADADDR (.data)
+                0x080008dc                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x24 load address 0x080008c4
+.data           0x20000000       0x24 load address 0x080008dc
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -1724,7 +1725,7 @@ END GROUP
                 0x20000024                _edata = .
                 0x20000024                __data_end__ = .
 
-.igot.plt       0x20000024        0x0 load address 0x080008e8
+.igot.plt       0x20000024        0x0 load address 0x08000900
  .igot.plt      0x20000024        0x0 ./system/src/newlib/_exit.o
 
 .bss_CCMRAM     0x00000000        0x0
@@ -1906,7 +1907,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3f05
+.debug_info     0x00000000     0x3fa4
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x94a ./system/src/newlib/_exit.o
  .debug_info    0x0000094a      0x42e ./system/src/newlib/_startup.o
@@ -1922,9 +1923,9 @@ END GROUP
  .debug_info    0x000036cd      0x436 ./src/Led_program.o
  .debug_info    0x00003b03      0x1e4 ./src/NVIC_program.o
  .debug_info    0x00003ce7       0xec ./src/RCC_program.o
- .debug_info    0x00003dd3      0x132 ./src/main.o
+ .debug_info    0x00003dd3      0x1d1 ./src/main.o
 
-.debug_abbrev   0x00000000     0x11d0
+.debug_abbrev   0x00000000     0x1235
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f5 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f5      0x1b3 ./system/src/newlib/_startup.o
@@ -1940,9 +1941,9 @@ END GROUP
  .debug_abbrev  0x00000ef7       0xc8 ./src/Led_program.o
  .debug_abbrev  0x00000fbf       0xeb ./src/NVIC_program.o
  .debug_abbrev  0x000010aa       0x88 ./src/RCC_program.o
- .debug_abbrev  0x00001132       0x9e ./src/main.o
+ .debug_abbrev  0x00001132      0x103 ./src/main.o
 
-.debug_line     0x00000000     0x271c
+.debug_line     0x00000000     0x2721
  *(.debug_line)
  .debug_line    0x00000000      0x3d2 ./system/src/newlib/_exit.o
  .debug_line    0x000003d2      0x441 ./system/src/newlib/_startup.o
@@ -1958,7 +1959,7 @@ END GROUP
  .debug_line    0x00002205      0x196 ./src/Led_program.o
  .debug_line    0x0000239b      0x126 ./src/NVIC_program.o
  .debug_line    0x000024c1       0xd4 ./src/RCC_program.o
- .debug_line    0x00002595      0x187 ./src/main.o
+ .debug_line    0x00002595      0x18c ./src/main.o
 
 .debug_frame    0x00000000      0x6d0
  *(.debug_frame)
@@ -1978,7 +1979,7 @@ END GROUP
  .debug_frame   0x00000640       0x40 ./src/RCC_program.o
  .debug_frame   0x00000680       0x50 ./src/main.o
 
-.debug_str      0x00000000    0x57a52
+.debug_str      0x00000000    0x57a5d
  *(.debug_str)
  .debug_str     0x00000000     0x7cf0 ./system/src/newlib/_exit.o
                                0x7eb4 (size before relaxing)
@@ -2008,8 +2009,8 @@ END GROUP
                                0x434c (size before relaxing)
  .debug_str     0x0005773f      0x2ee ./src/RCC_program.o
                                0x347a (size before relaxing)
- .debug_str     0x00057a2d       0x25 ./src/main.o
-                               0x4dea (size before relaxing)
+ .debug_str     0x00057a2d       0x30 ./src/main.o
+                               0x4e23 (size before relaxing)
 
 .debug_loc      0x00000000      0xccf
  *(.debug_loc)
