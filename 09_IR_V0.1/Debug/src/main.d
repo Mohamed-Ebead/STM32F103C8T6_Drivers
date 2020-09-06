@@ -1,0 +1,23 @@
+src/main.o: ../src/main.c ../include/STD_TYPES.h ../include/BIT_MATH.h \
+ ../include/RCC_interface.h ../include/EXTI0_interface.h \
+ ../include/NVIC_interface.h ../include/STK_interface.h \
+ ../src/IR_interface.h ../include/RGB_LED_interface.h \
+ ../include/RGB_LED_config.h
+
+../include/STD_TYPES.h:
+
+../include/BIT_MATH.h:
+
+../include/RCC_interface.h:
+
+../include/EXTI0_interface.h:
+
+../include/NVIC_interface.h:
+
+../include/STK_interface.h:
+
+../src/IR_interface.h:
+
+../include/RGB_LED_interface.h:
+
+../include/RGB_LED_config.h:
