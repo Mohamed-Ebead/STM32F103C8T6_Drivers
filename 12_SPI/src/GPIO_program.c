@@ -79,7 +79,7 @@ void GPIO_vidInit(GPIO_Handle_t *pGPIOHandle)
 
     GPIO_PeriClockControl(pGPIOHandle->pGPIOx, ENABLE);
 
-    //ENABLE AFIO clock if it is configured
+ /*   //ENABLE AFIO clock if it is configured
     if ( (PinMode==OUTPUT_2MHZ_AFPP)||(PinMode==OUTPUT_10MHZ_AFPP)||(PinMode==OUTPUT_50MHZ_AFPP) )
     {
     	RCC_voidEnableClock(RCC_APB2,RCC_AFIO) ;
@@ -87,7 +87,7 @@ void GPIO_vidInit(GPIO_Handle_t *pGPIOHandle)
     else
     {
     	// not AFIO mode
-    }
+    }*/
 
    //1 . configure the mode , configuration , and the speed of the GPIO pin
 
