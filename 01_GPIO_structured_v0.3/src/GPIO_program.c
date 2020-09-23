@@ -86,9 +86,9 @@ void GPIO_vidInit(GPIO_Handle_t *pGPIOHandle)
     }
     else           // GPIO PINS 8 >> 15
     {
-		PinNumber -= 8 ;
+    	PinNumber -= 8 ;
     	pGPIOHandle->pGPIOx->CRH &= ~( (0b1111) << (4*PinNumber) ) ;
-    	pGPIOHandle->pGPIOx->CRH |= ((PinMode)<<(4*(PinNumber))) ;
+    	pGPIOHandle->pGPIOx->CRH |= ( (PinMode)<<(4*(PinNumber)) )  ;
     }
 
 
@@ -188,8 +188,8 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, u8 PinNumber)
  ***********************************************************************************************************************/
 void GPIO_vidInitNibble( GPIO_Handle_t *pGPIOHandle )
 {
-	u8  u8NibbleNumber = pGPIOHandle->GPIO_NippleConfig.GPIO_NibbleNumber ;
-	u16 u16_NibbleMode = pGPIOHandle->GPIO_NippleConfig.GPIO_NibbleMode ;
+	u8  u8NibbleNumber = pGPIOHandle->GPIO_NibbleConfig.GPIO_NibbleNumber ;
+	u16 u16_NibbleMode = pGPIOHandle->GPIO_NibbleConfig.GPIO_NibbleMode ;
 
 	//enable the peripheral clock
 
