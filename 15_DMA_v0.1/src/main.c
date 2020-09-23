@@ -1,9 +1,17 @@
 /*
  * main.c
  *
- *  Created on: Aug 16, 2020
+ *  Created on: sept 23, 2020
  *      Author: Mohamed  Ebead
  */
+
+/***
+ * 	This is a program to compare between the speed of the processor and DMA
+ * 	for copying a 1000 element of an array ,
+ * 	the result is : the DMA finishes all the 1000 element while the processor is in the 332th element
+ *
+ */
+
 
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
